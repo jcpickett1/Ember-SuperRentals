@@ -57,7 +57,6 @@ module('Integration | Component | map', function (hooks) {
       height: 120,
     });
 
-    
     await render(hbs`<Map
       @lat={{this.lat}}
       @lng={{this.lng}}
