@@ -9,8 +9,7 @@ module('Integration | Component | map', function (hooks) {
 
   test('it renders a map image for the specified parameters', async function (assert) {
     await render(hbs`<Map
-      @lat="37.7797"
-      @lng="-122.4184"
+      @loc="-122.4184,37.7797"
       @zoom="10"
       @width="150"
       @height="120"
@@ -19,7 +18,7 @@ module('Integration | Component | map', function (hooks) {
     assert
       .dom('.map img')
       .exists()
-      .hasAttribute('alt', 'Map image at coordinates 37.7797,-122.4184')
+      .hasAttribute('alt', 'Map image at coordinates -122.4184,37.7797')
       .hasAttribute('src')
       .hasAttribute('width', '150')
       .hasAttribute('height', '120');
@@ -50,16 +49,14 @@ module('Integration | Component | map', function (hooks) {
 
   test('it updates the `src` attribute when the arguments change', async function (assert) {
     this.setProperties({
-      lat: 37.7749,
-      lng: -122.4194,
+      loc: "-122.4194,37.7749",
       zoom: 10,
       width: 150,
       height: 120,
     });
 
     await render(hbs`<Map
-      @lat={{this.lat}}
-      @lng={{this.lng}}
+      @loc={{this.loc}}
       @zoom={{this.zoom}}
       @width={{this.width}}
       @height={{this.height}}
@@ -69,7 +66,7 @@ module('Integration | Component | map', function (hooks) {
 
     assert.ok(
       img.src.includes('-122.4194,37.7749,10'),
-      'the src should include the lng,lat,zoom parameter'
+      'the src should include the loc parameter'
     );
 
     assert.ok(
@@ -85,7 +82,7 @@ module('Integration | Component | map', function (hooks) {
 
     assert.ok(
       img.src.includes('-122.4194,37.7749,12'),
-      'the src should include the lng,lat,zoom parameter'
+      'the src should include the loc parameter'
     );
 
     assert.ok(
@@ -94,13 +91,12 @@ module('Integration | Component | map', function (hooks) {
     );
 
     this.setProperties({
-      lat: 47.6062,
-      lng: -122.3321,
+      loc: "-122.3321,47.6062"
     });
 
     assert.ok(
       img.src.includes('-122.3321,47.6062,12'),
-      'the src should include the lng,lat,zoom parameter'
+      'the src should include the loc parameter'
     );
 
     assert.ok(
