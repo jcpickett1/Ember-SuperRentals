@@ -49,7 +49,7 @@ module('Integration | Component | map', function (hooks) {
 
   test('it updates the `src` attribute when the arguments change', async function (assert) {
     this.setProperties({
-      loc: "-122.4194,37.7749",
+      loc: '-122.4194,37.7749',
       zoom: 10,
       width: 150,
       height: 120,
@@ -91,7 +91,7 @@ module('Integration | Component | map', function (hooks) {
     );
 
     this.setProperties({
-      loc: "-122.3321,47.6062"
+      loc: '-122.3321,47.6062',
     });
 
     assert.ok(

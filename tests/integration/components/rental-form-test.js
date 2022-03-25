@@ -12,7 +12,10 @@ module('Integration | Component | rental-form', function (hooks) {
 
     await render(hbs`<RentalForm />`);
 
-    assert.dom(this.element).hasText('Enter as decimal coordinates, separated by a comma with longitude first Submit');
-
+    assert
+      .dom(this.element)
+      .hasText(
+        'Enter as decimal coordinates, separated by a comma with longitude first Submit'
+      );
   });
 });

@@ -1,5 +1,5 @@
 import { module, test } from 'qunit';
-import { click, find, visit, currentURL } from '@ember/test-helpers';
+import { click, visit, currentURL } from '@ember/test-helpers';
 import { setupApplicationTest } from 'ember-qunit';
 
 module('Acceptance | super rentals', function (hooks) {
@@ -25,28 +25,6 @@ module('Acceptance | super rentals', function (hooks) {
     await click('.rental:first-of-type a');
     assert.strictEqual(currentURL(), '/rentals/1');
   });
-
-//   // This test appears to expect a response that is out of spec with JSON-API
-//   test('visiting /rentals/1', async function (assert) {
-//     await visit('/rentals/1');
-
-//     assert.strictEqual(currentURL(), '/rentals/1');
-//     assert.dom('nav').exists();
-//     assert.dom('h1').containsText('SuperRentals');
-//     assert.dom('h2').containsText('Grand Old Mansion');
-//     assert.dom('.rental.detailed').exists();
-//     assert.dom('.share.button').hasText('Share on Twitter');
-
-//     let button = find('.share.button');
-
-//     let tweetURL = new URL(button.href);
-//     assert.strictEqual(tweetURL.host, 'twitter.com');
-
-//     assert.strictEqual(
-//       tweetURL.searchParams.get('url'),
-//       `${window.location.origin}/rentals/grand-old-mansion`
-//     );
-//   });
 
   test('visiting /about', async function (assert) {
     await visit('/about');
