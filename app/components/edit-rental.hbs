@@ -1,0 +1,59 @@
+<div>
+    <form>
+        <Input
+            id="id-input"
+            placeholder="Rental ID"
+            @value={{this.rentalID}}
+        />
+        <br />
+        <Input
+            id="title-input"
+            placeholder="Rental Title"
+            @value={{this.title}}
+        />
+        <br />
+        <Input
+            id="owner-input"
+            placeholder="Rental Owner"
+            @value={{this.owner}}
+        />
+        <br />
+        <Input
+            id="city-input"
+            placeholder="Rental City"
+            @value={{this.city}}
+        />
+        <br />
+        <Input
+            id="location-input"
+            placeholder="Rental Location"
+            @value={{this.location}}
+        />
+        <span>Enter as decimal coordinates, separated by a comma with longitude first</span>
+        <br />
+        <Input
+            id="category-input"
+            placeholder="Rental Category"
+            @value={{this.category}}
+        />
+        <br />
+        <Input
+            id="bedrooms-input"
+            placeholder="Rental Bedrooms"
+            @value={{this.bedrooms}}
+        />
+        <br />
+        <Input
+            id="image-input"
+            placeholder="Rental Image URL"
+            @value={{this.image}}
+        />
+        <br />
+        <Input
+            id="description-input"
+            placeholder="Rental Description"
+            @value={{this.description}}
+        />
+    </form> 
+    <button ...attributes onclick={{this.submitRental}} width="100px" height="100px" type="button">Submit</button>
+</div>

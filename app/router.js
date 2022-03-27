@@ -10,6 +10,6 @@ Router.map(function () {
   this.route('about');
   this.route('contact', { path: '/getting-in-touch' });
   this.route('rental', { path: '/rentals/:rental_id' });
-  this.route('rentals');
+  this.route('editrental', { path: '/rentals/:rental_id/edit' });
   this.route('rentalform', { path: '/rentals/new' });
 });

@@ -2,7 +2,7 @@ import Route from '@ember/routing/route';
 import { inject as service } from '@ember/service';
 import axios from 'axios';
 
-export default class RentalRoute extends Route {
+export default class EditRental extends Route {
   @service store;
 
   async model(params) {
